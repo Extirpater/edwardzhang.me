@@ -39,7 +39,17 @@
                 "caseSensitive": false
             }
         ],
+<<<<<<< HEAD
         "no-unused-vars": "warn",
+=======
+        "no-unused-vars": [
+            "error",
+            {
+                "vars": "all",
+                "args": "none"
+            }
+        ],
+>>>>>>> 25eca102439805080e8c6601a38c35cd0c3bf886
         "no-underscore-dangle": 0,
         "arrow-body-style": 0,
         "one-var": [
