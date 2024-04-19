@@ -22,14 +22,15 @@ function Nav() {
     </nav>
   );
 }
-function Test(props) {
+function Test() {
   const { id } = useParams();
   return <div> ID: {id} </div>;
 }
 const FallBack = () => {
   return <div>URL Not Found</div>;
 };
-function App() {
+
+export default function App() {
   return (
     <BrowserRouter>
       <div>
