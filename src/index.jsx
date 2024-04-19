@@ -1,9 +1,37 @@
 import React from 'react';
 import { createRoot } from 'react-dom/client';
 import {
-  BrowserRouter, Routes, Route, NavLink, useParams,
+  createBrowserRouter,
+  BrowserRouter,
+  RouterProvider,
+  Routes,
+  Route,
+  NavLink,
+  Link,
+  useParams,
 } from 'react-router-dom';
 
+function Root() {
+  // 2️⃣ `BrowserRouter` component removed, but the <Routes>/<Route>
+  // component below are unchanged
+  return (
+    <div>
+      <Nav />
+      <Routes>
+        <Route path="/" element={<Welcome />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/test/:id" element={<Test />} />
+        <Route path="*" element={<FallBack />} />
+      </Routes>
+    </div>
+  );
+}
+const router = createBrowserRouter([
+  { path: '*', Component: Root },
+]);
+export default function App() {
+  return <RouterProvider router={router} />;
+}
 function About() {
   return <div> All there is to know about me </div>;
 }
@@ -29,7 +57,7 @@ function Test() {
 const FallBack = () => {
   return <div>URL Not Found</div>;
 };
-
+/*
 export default function App() {
   return (
     <BrowserRouter>
@@ -45,6 +73,7 @@ export default function App() {
     </BrowserRouter>
   );
 }
+*/
 
 const root = createRoot(document.getElementById('main'));
 root.render(<App />);
