@@ -10,6 +10,7 @@ import {
   Link,
   useParams,
 } from 'react-router-dom';
+import Controls from './components/controls';
 
 function Root() {
   // 2️⃣ `BrowserRouter` component removed, but the <Routes>/<Route>
@@ -23,6 +24,7 @@ function Root() {
         <Route path="/test/:id" element={<Test />} />
         <Route path="*" element={<FallBack />} />
       </Routes>
+      <Controls />
     </div>
   );
 }
