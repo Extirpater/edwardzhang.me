@@ -35,6 +35,7 @@
     "react-dom": "^18.2.0",
     "react-router": "^6.22.3",
     "react-router-dom": "^6.22.3",
-    "zustand": "^4.5.2"
+    "zustand": "^4.5.2",
+    "zustymiddleware": "^1.2.0"
   }
 }
