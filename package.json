@@ -21,20 +21,28 @@
     "eslint-plugin-react": "^7.34.1",
     "eslint-plugin-react-hooks": "^4.6.0",
     "globals": "^15.0.0",
+    "postcss": "^8.4.38",
     "sass": "^1.74.1",
+    "tailwindcss": "^3.4.4",
     "vite": "^5.2.8",
     "vite-plugin-eslint": "^1.8.1"
   },
   "dependencies": {
+    "@radix-ui/react-navigation-menu": "^1.1.4",
     "@vitejs/plugin-react": "^4.2.1",
     "axios": "^1.6.8",
+    "class-variance-authority": "^0.7.0",
+    "clsx": "^2.1.1",
     "immer": "^10.0.4",
     "jquery": "^3.7.1",
     "lodash.debounce": "^4.0.8",
+    "lucide-react": "^0.390.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router": "^6.22.3",
     "react-router-dom": "^6.22.3",
+    "tailwind-merge": "^2.3.0",
+    "tailwindcss-animate": "^1.0.7",
     "zustand": "^4.5.2",
     "zustymiddleware": "^1.2.0"
   }
