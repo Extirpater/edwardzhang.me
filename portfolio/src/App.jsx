@@ -1,18 +1,11 @@
 import { Routes, Route } from 'react-router-dom'
 import Nav from './components/Nav'
+import About from './components/About'
+import Home from './components/Home'
+import Blog from './components/Blog'
+
 import './index.css'
 
-function Home() {
-  return (
-    <>
-      <p>Edward Zhang</p>
-    </>
-  )
-}
-
-function About() {
-  return <h2>About Page</h2>
-}
 
 function App() {
   return (
@@ -22,6 +15,8 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
+          <Route path="/blog" element={<Blog />} />
+
         </Routes>
       </div>
     </>

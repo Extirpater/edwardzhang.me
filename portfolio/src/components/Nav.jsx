@@ -1,19 +1,46 @@
-import { Link } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
 
 function Nav() {
     return (
-        <nav className="bg-white shadow-md fixed top-0 w-full z-10">
-            <div className="container mx-auto p-4 flex justify-center items-center">
+        <nav className="bg-white shadow-lg rounded-lg fixed top-8 left-1/2 transform -translate-x-1/2 w-max p-4">
+            <div className="container mx-auto flex justify-center items-center">
                 <ul className="flex space-x-8 list-none">
                     <li>
-                        <Link to="/" className="text-gray-700 font-medium hover:text-blue-500">
+                        <NavLink
+                            exact
+                            to="/"
+                            activeClassName="active"
+                            className="nav-link"
+                        >
                             Home
-                        </Link>
+                        </NavLink>
                     </li>
                     <li>
-                        <Link to="/about" className="text-gray-700 font-medium hover:text-blue-500">
+                        <NavLink
+                            to="/about"
+                            activeClassName="active"
+                            className="nav-link"
+                        >
                             About
-                        </Link>
+                        </NavLink>
+                    </li>
+                    <li>
+                        <NavLink
+                            to="/blog"
+                            activeClassName="active"
+                            className="nav-link"
+                        >
+                            Blog
+                        </NavLink>
+                    </li>
+                    <li>
+                        <NavLink
+                            to="/contact"
+                            activeClassName="active"
+                            className="nav-link"
+                        >
+                            Contact
+                        </NavLink>
                     </li>
                 </ul>
             </div>

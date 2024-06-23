@@ -1,0 +1,32 @@
+[
+    {
+        "id": 1,
+        "title": "Hello World",
+        "date": "June 22, 2024",
+        "overview": "Overview of the blog post content.",
+        "research": [
+            "Research item 1",
+            "Research item 2"
+        ],
+        "dates": [
+            "2024-present",
+            "2021-present"
+        ],
+        "conclusion": "Conclusion of the blog post."
+    },
+    {
+        "id": 2,
+        "title": "Approaching AI Research",
+        "date": "July 1, 2024",
+        "overview": "Overview of the second blog post content.",
+        "research": [
+            "Research item A",
+            "Research item B"
+        ],
+        "dates": [
+            "2023-present",
+            "2020-present"
+        ],
+        "conclusion": "Conclusion of the second blog post."
+    }
+]
