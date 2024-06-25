@@ -1,73 +1,33 @@
-import React, { useState } from 'react';
+import React from 'react';
+import profilePicture from '../assets/PFP2.jpeg'; // Replace with your actual profile picture
 
 function Contact() {
-    const [formData, setFormData] = useState({
-        name: '',
-        email: '',
-        message: ''
-    });
-
-    const handleChange = (e) => {
-        setFormData({
-            ...formData,
-            [e.target.name]: e.target.value
-        });
-    };
-
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        // Handle form submission, e.g., send the form data to your email or API
-        console.log('Form submitted:', formData);
-    };
-
     return (
-        <div className="bg-gray-100 min-h-screen flex items-center justify-center">
-            <div className="bg-white shadow-lg rounded-lg p-8 max-w-lg w-full">
-                <h2 className="text-3xl font-bold mb-8">Contact Me</h2>
-                <form onSubmit={handleSubmit} className="space-y-6">
-                    <div>
-                        <label htmlFor="name" className="block text-gray-700">Name</label>
-                        <input
-                            type="text"
-                            id="name"
-                            name="name"
-                            value={formData.name}
-                            onChange={handleChange}
-                            className="mt-1 p-2 w-full border border-gray-300 rounded-lg"
-                            required
-                        />
+        <div className="bg-gray-100 min-h-screen">
+            <div className="container mx-auto pt-24">
+                <div className="max-w-xl mx-auto">
+                    <div className="bg-white shadow-lg rounded-lg p-8 mb-4">
+                        <div className="flex items-center mb-4">
+                            <div className="flex-1">
+                                <h2 className="text-xl font-bold">Contact Me</h2>
+                                <p className="text-gray-600">Feel free to reach out to me through any of the following:</p>
+                            </div>
+                        </div>
+                        <div className="border-t border-gray-300 pt-4">
+                            <ul className="list-disc list-inside">
+                                <li>
+                                    <a href="https://twitter.com/your_twitter" target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:underline">Twitter</a>
+                                </li>
+                                <li>
+                                    <a href="https://linkedin.com/in/your_linkedin" target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:underline">LinkedIn</a>
+                                </li>
+                                <li>
+                                    <a href="mailto:your_email@example.com" className="text-blue-500 hover:underline">Email</a>
+                                </li>
+                            </ul>
+                        </div>
                     </div>
-                    <div>
-                        <label htmlFor="email" className="block text-gray-700">Email</label>
-                        <input
-                            type="email"
-                            id="email"
-                            name="email"
-                            value={formData.email}
-                            onChange={handleChange}
-                            className="mt-1 p-2 w-full border border-gray-300 rounded-lg"
-                            required
-                        />
-                    </div>
-                    <div>
-                        <label htmlFor="message" className="block text-gray-700">Message</label>
-                        <textarea
-                            id="message"
-                            name="message"
-                            value={formData.message}
-                            onChange={handleChange}
-                            className="mt-1 p-2 w-full border border-gray-300 rounded-lg"
-                            rows="5"
-                            required
-                        ></textarea>
-                    </div>
-                    <button
-                        type="submit"
-                        className="bg-blue-500 text-white py-2 px-4 rounded-lg hover:bg-blue-600"
-                    >
-                        Send Message
-                    </button>
-                </form>
+                </div>
             </div>
         </div>
     );
