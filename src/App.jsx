@@ -5,6 +5,7 @@ import Home from './components/Home'
 import Blog from './components/Blog'
 
 import './index.css'
+import Contact from './components/Contact'
 
 
 function App() {
@@ -16,6 +17,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
           <Route path="/blog" element={<Blog />} />
+          <Route path="/contact" element={<Contact />} />
 
         </Routes>
       </div>
