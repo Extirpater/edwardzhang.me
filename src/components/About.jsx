@@ -29,6 +29,9 @@ function About() {
             title: 'Using Deep Learning in Lyme Disease Diagnosis',
             source: "Journal of Student Research (JSR) ​2021",
             fileUrl: paper3
+        },
+        {
+            title: 'WIP'
         }
     ];
 
