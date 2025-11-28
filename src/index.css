@@ -21,7 +21,7 @@ html {
   --accent: #002FA7;
   /* Electric Blue */
   --spacing-unit: 1.5rem;
-  --max-width: 640px;
+  --max-width: 960px;
 }
 
 body {
@@ -32,7 +32,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
   background-color: var(--bg);
   color: var(--text-main);
-  font-size: 15px;
+  font-size: 23px;
   line-height: 1.6;
   cursor: none;
   /* Hide default cursor for custom one */
@@ -101,14 +101,14 @@ a.text-link:hover {
 
 .entry-num {
   font-family: 'Space Mono', monospace;
-  font-size: 12px;
+  font-size: 18px;
   color: var(--text-muted);
   padding-top: 4px;
 }
 
 .entry-content {
   font-weight: 400;
-  font-size: 15px;
+  font-size: 23px;
   line-height: 1.6;
 }
 
@@ -206,7 +206,7 @@ h1 {
 
 h2 {
   font-family: 'Space Mono', monospace;
-  font-size: 11px;
+  font-size: 17px;
   text-transform: uppercase;
   letter-spacing: 1px;
   color: var(--text-muted);

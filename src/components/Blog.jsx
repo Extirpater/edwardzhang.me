@@ -56,17 +56,17 @@ function Blog() {
                                     <br />
                                     <span style={{ color: 'var(--text-muted)', fontSize: '0.9em' }}>{post.date}</span>
                                     {expandedId === post.id && (
-                                        <div style={{ marginTop: '16px', fontSize: '14px', lineHeight: '1.6', color: 'var(--text-main)' }}>
+                                        <div style={{ marginTop: '16px', fontSize: '21px', lineHeight: '1.6', color: 'var(--text-main)' }}>
                                             <p>{post.overview}</p>
                                             <div style={{ marginTop: '16px' }}>
-                                                <h3 style={{ fontFamily: "'Space Mono', monospace", fontSize: '10px', textTransform: 'uppercase', letterSpacing: '1px', color: 'var(--text-muted)', marginBottom: '12px' }}>
+                                                <h3 style={{ fontFamily: "'Space Mono', monospace", fontSize: '15px', textTransform: 'uppercase', letterSpacing: '1px', color: 'var(--text-muted)', marginBottom: '12px' }}>
                                                     Research Experience
                                                 </h3>
                                                 <div style={{ marginLeft: '12px' }}>
                                                     {post.research.map((item, idx) => (
                                                         <div key={idx} style={{ marginBottom: '12px' }}>
                                                             <p>{item}</p>
-                                                            <span style={{ fontSize: '11px', color: 'var(--text-muted)', fontFamily: "'Space Mono', monospace" }}>
+                                                            <span style={{ fontSize: '17px', color: 'var(--text-muted)', fontFamily: "'Space Mono', monospace" }}>
                                                                 {post.dates[idx]}
                                                             </span>
                                                         </div>

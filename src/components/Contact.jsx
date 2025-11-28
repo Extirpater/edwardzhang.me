@@ -12,7 +12,7 @@ function Contact() {
             <div className="container">
                 <section style={{ marginBottom: '60px' }}>
                     <h2>Contact</h2>
-                    <p style={{ fontSize: '1rem', lineHeight: '1.6', marginBottom: '24px' }}>Feel free to reach out through any of the following:</p>
+                    <p style={{ fontSize: '1.5rem', lineHeight: '1.6', marginBottom: '24px' }}>Feel free to reach out through any of the following:</p>
                 </section>
 
                 <ul className="entry-list">

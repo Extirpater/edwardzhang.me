@@ -26,7 +26,7 @@ function Footer() {
             paddingTop: '20px',
             borderTop: '1px solid #eee',
             fontFamily: "'Space Mono', monospace",
-            fontSize: '11px',
+            fontSize: '17px',
             color: 'var(--text-muted)',
             display: 'flex',
             justifyContent: 'space-between'
