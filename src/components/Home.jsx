@@ -38,7 +38,7 @@ function Home() {
                         (Would've stayed in research, but ran out of compute. Started <a href="https://deepgrove.ai" target="_blank" rel="noopener noreferrer" className="text-link">Deepgrove</a> to fund more experiments. )
                     </p>
                     <p style={{ fontSize: '1.5rem', lineHeight: '1.6' }}>
-                        I was an RA under <a href="https://sites.google.com/site/yangyaoqingcmu/" target="_blank" rel="noopener noreferrer" className="text-link">Yaoqing Yang</a> @ Dartmouth,
+                        I was an RA under <a href="https://sites.google.com/site/yangyaoqingcmu/" target="_blank" rel="noopener noreferrer" className="text-link">Yaoqing Yang</a> @ Dartmouth <span style={{ fontSize: '0.9em', fontFamily: "'Space Mono', monospace", color: 'var(--text-muted)' }}>(2025)</span>,
                         <a href="https://wang.hms.harvard.edu" target="_blank" rel="noopener noreferrer" className="text-link"> Harvard AI and Robotics Lab</a> <span style={{ fontSize: '0.9em', fontFamily: "'Space Mono', monospace", color: 'var(--text-muted)' }}>(2022–2023)</span>,
                         <a href="https://comp.ophthalmology.uw.edu" target="_blank" rel="noopener noreferrer" className="text-link"> UW-Medicine Computational Ophthalmology Lab</a> <span style={{ fontSize: '0.9em', fontFamily: "'Space Mono', monospace", color: 'var(--text-muted)' }}>(2022–2023)</span>,
                         and <a href="https://www.niaid.nih.gov/clinical-trials/lyme-disease-studies" target="_blank" rel="noopener noreferrer" className="text-link">NIH Lyme Disease Studies Unit</a> <span style={{ fontSize: '0.9em', fontFamily: "'Space Mono', monospace", color: 'var(--text-muted)' }}>(2020–2021)</span>.
