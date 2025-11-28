@@ -7,7 +7,7 @@ function Home() {
                 {/* Intro Section */}
                 <section style={{ marginBottom: '60px' }}>
                     <p style={{ fontSize: '1.65rem', lineHeight: '1.6' }}>
-                        Building frontier AI that runs on any device. Researching efficient AI, drawn to Ockham's Razor, the lottery ticket hypothesis, and optimal brain damage, concepts that get at the essence of intelligence.
+                        Building frontier AI that runs on any device. Researching efficient AI, drawn to Occam's Razor, the lottery ticket hypothesis, and optimal brain damage, concepts that get at the essence of intelligence.
                     </p>
                 </section>
 
