@@ -1,72 +1,90 @@
-import React, { useState, useEffect } from 'react';
-import profilePicture from '../assets/PFP2.jpeg'; // Replace with your actual profile picture
+import React, { useState, useEffect, useRef } from 'react';
 
 function Blog() {
     const [blogPosts, setBlogPosts] = useState([]);
     const [expandedId, setExpandedId] = useState(null);
+    const [visiblePosts, setVisiblePosts] = useState([]);
+    const postRefs = useRef([]);
 
     useEffect(() => {
-        fetch('/blogPosts.json') // Assuming blogPosts.json is in your public folder
+        fetch('/blogPosts.json')
             .then(response => response.json())
             .then(data => setBlogPosts(data))
             .catch(error => console.error('Error fetching blog posts:', error));
     }, []);
+
+    useEffect(() => {
+        const observer = new IntersectionObserver(
+            (entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        setVisiblePosts((prev) => [...prev, entry.target.dataset.post]);
+                    }
+                });
+            },
+            { threshold: 0.1, rootMargin: '0px 0px -30px 0px' }
+        );
+
+        postRefs.current.forEach((ref) => {
+            if (ref) observer.observe(ref);
+        });
+
+        return () => {
+            postRefs.current.forEach((ref) => {
+                if (ref) observer.unobserve(ref);
+            });
+        };
+    }, [blogPosts]);
 
     const handleToggleExpand = (postId) => {
         setExpandedId(expandedId === postId ? null : postId);
     };
 
     return (
-        <div className="bg-gray-100 min-h-screen">
-            <div className="container mx-auto pt-24">
-                <div className="max-w-4xl mx-auto">
-                    {blogPosts.map(post => (
-                        <div
-                            key={post.id}
-                            className="bg-white shadow-lg rounded-lg p-8 mb-4 cursor-pointer"
-                            onClick={() => handleToggleExpand(post.id)}
-                        >
-                            <div className="flex items-center mb-4">
-                                <div className="flex-none mr-4">
-                                    <img src={profilePicture} alt="Profile" className="w-20 h-20 rounded-full" />
-                                </div>
-                                <div className="flex-1">
-                                    <h2 className="text-xl font-bold">{post.title}</h2>
-                                    <p className="text-gray-600">Published on {post.date}</p>
-                                </div>
-                            </div>
-                            <div
-                                className={`transition-all duration-500 ease-in-out ${expandedId === post.id ? 'max-h-screen opacity-100' : 'opacity-0 max-h-0 overflow-hidden'}`}
-                                style={{ maxHeight: expandedId === post.id ? '1000px' : '0' }}
-                            >
-                                {expandedId === post.id && (
-                                    <div className="border-t border-gray-300 pt-4">
-                                        <h3 className="text-lg font-bold mb-2">Overview</h3>
-                                        <p className="text-gray-600 mb-4">{post.overview}</p>
-                                        <h3 className="text-lg font-bold mb-2">Research</h3>
-                                        <div className="flex items-start">
-                                            <div className="w-5/12 pr-4">
-                                                {post.research.map((item, index) => (
-                                                    <p key={index} className="text-gray-600 mb-2">{item}</p>
-                                                ))}
+        <div className="min-h-screen bg-white">
+            <div className="container">
+                <section style={{ marginBottom: '60px' }}>
+                    <h2>Selected Writing</h2>
+                    <ul className="entry-list">
+                        {blogPosts.map((post, index) => (
+                            <li key={post.id} className="entry">
+                                <span className="entry-num">{String(index + 1).padStart(2, '0')}</span>
+                                <div className="entry-content">
+                                    <a href="#" className="text-link" onClick={(e) => { e.preventDefault(); handleToggleExpand(post.id); }}>
+                                        {post.title}
+                                    </a>
+                                    <br />
+                                    <span style={{ color: 'var(--text-muted)', fontSize: '0.9em' }}>{post.date}</span>
+                                    {expandedId === post.id && (
+                                        <div style={{ marginTop: '16px', fontSize: '14px', lineHeight: '1.6', color: 'var(--text-main)' }}>
+                                            <p>{post.overview}</p>
+                                            <div style={{ marginTop: '16px' }}>
+                                                <h3 style={{ fontFamily: "'Space Mono', monospace", fontSize: '10px', textTransform: 'uppercase', letterSpacing: '1px', color: 'var(--text-muted)', marginBottom: '12px' }}>
+                                                    Research Experience
+                                                </h3>
+                                                <div style={{ marginLeft: '12px' }}>
+                                                    {post.research.map((item, idx) => (
+                                                        <div key={idx} style={{ marginBottom: '12px' }}>
+                                                            <p>{item}</p>
+                                                            <span style={{ fontSize: '11px', color: 'var(--text-muted)', fontFamily: "'Space Mono', monospace" }}>
+                                                                {post.dates[idx]}
+                                                            </span>
+                                                        </div>
+                                                    ))}
+                                                </div>
                                             </div>
-                                            <div className="w-2/12 ml-auto">
-                                                {post.dates.map((date, index) => (
-                                                    <p key={index} className="text-gray-600 mb-2">{date}</p>
-                                                ))}
-                                            </div>
+                                            <p style={{ marginTop: '16px' }}>{post.conclusion}</p>
                                         </div>
-                                        <h3 className="text-lg font-bold mb-2">Conclusion</h3>
-                                        <p className="text-gray-600">{post.conclusion}</p>
-                                    </div>
-                                )}
-                            </div>
-                        </div>
-                    ))}
-                </div>
+                                    )}
+                                </div>
+                            </li>
+                        ))}
+                    </ul>
+                </section>
             </div>
         </div>
     );
 }
 
 export default Blog;
+

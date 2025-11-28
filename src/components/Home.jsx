@@ -1,56 +1,49 @@
 import React from 'react';
-import profilePicture from '../assets/PFP2.jpeg'; // Replace with your actual profile picture
 
 function Home() {
     return (
-        <div className="bg-gray-100 min-h-screen">
-            <div className="container mx-auto pt-24">
-                <div className="bg-white shadow-lg rounded-lg p-8 flex items-start max-w-4xl mx-auto relative">
-                    <div className="absolute top-0 left-0 mt-4 ml-4">
-                        <img src={profilePicture} alt="Profile" className="w-40 h-40 rounded-full" />
-                    </div>
-                    <div className="ml-48">
-                        <h1 className="text-xl font-bold mb-4">Edward B. Zhang</h1>
-                        <p className="text-lg mb-4">
-                            CS + Math @ <span className="font-bold text-green-500">Dartmouth College</span>
-                        </p>
-                        <div className='flex-col'>
-                            <div className="flex items-start">
-                                <div className="w-3/10">
-                                    <p className="text-lg font-bold mb-2">Research</p>
-                                </div>
-                                <div className="w-5/10 mt-4 pl-4">
-                                    <p className="text-gray-600 mb-4 pl-2">
-                                        Harvard Ophthalmology AI Lab
-                                    </p>
-                                    <p className="text-gray-600 mb-4 pl-2">
-                                        Dartmouth Hitchcock Medical Center EDIT Lab
-                                    </p>
-                                    <p className="text-gray-600 mb-4 pl-2">
-                                        UW-Medicine Computational Ophthalmology Lab
-                                    </p>
-                                    <p className="text-gray-600 mb-4 pl-2">
-                                        NIH Lyme Disease Studies Unit
-                                    </p>
-                                </div>
-                                <div className="w-2/10 mt-4 ml-3">
-                                    <p className="text-gray-600 mb-4 pl-2">
-                                        2024-present
-                                    </p>
-                                    <p className="text-gray-600 mb-4 pl-2">
-                                        2021-present
-                                    </p>
-                                    <p className="text-gray-600 mb-4 pl-2">
-                                        2022-2023
-                                    </p>
-                                    <p className="text-gray-600 mb-4 pl-2">
-                                        2020-2021
-                                    </p>
-                                </div>
+        <div className="min-h-screen bg-white">
+            <div className="container">
+                {/* Intro Section */}
+                <section style={{ marginBottom: '60px' }}>
+                    <p style={{ fontSize: '1.1rem', lineHeight: '1.6' }}>
+                        Building frontier AI that runs on any device. Researching efficient AI, drawn to Ockham's Razor, the lottery ticket hypothesis, and optimal brain damage, concepts that get at the essence of intelligence.
+                    </p>
+                </section>
+
+                {/* Currently Section */}
+                <section style={{ marginBottom: '60px' }}>
+                    <h2>Currently</h2>
+                    <ul className="entry-list">
+                        <li className="entry">
+                            <span className="entry-num">01</span>
+                            <div className="entry-content">
+                                I am co-founder and CEO of <a href="https://deepgrove.ai" target="_blank" rel="noopener noreferrer" className="text-link">DeepGrove</a> (YC S25), working on research and engineering in efficient AI.
                             </div>
-                        </div>
-                    </div>
-                </div>
+                        </li>
+                        <li className="entry">
+                            <span className="entry-num">02</span>
+                            <div className="entry-content">
+                                Sometimes I write about research and other things. Other times I think about writing and then remember I have code to write instead.
+                            </div>
+                        </li>
+                    </ul>
+                </section>
+
+                {/* Previously Section */}
+                <section style={{ marginBottom: '60px' }}>
+                    <h2>Previously</h2>
+
+                    <p style={{ fontSize: '0.75rem', lineHeight: '1.6', color: 'var(--text-muted)', fontStyle: 'italic', marginBottom: '16px', opacity: 0.6 }}>
+                        (Would've stayed in research, but ran out of compute. Started <a href="https://deepgrove.ai" target="_blank" rel="noopener noreferrer" className="text-link">Deepgrove</a> to fund more experiments. )
+                    </p>
+                    <p style={{ fontSize: '1rem', lineHeight: '1.6' }}>
+                        I was an RA under <a href="https://sites.google.com/site/yangyaoqingcmu/" target="_blank" rel="noopener noreferrer" className="text-link">Yaoqing Yang</a> @ Dartmouth,
+                        <a href="https://wang.hms.harvard.edu" target="_blank" rel="noopener noreferrer" className="text-link"> Harvard AI and Robotics Lab</a> <span style={{ fontSize: '0.85em', fontFamily: "'Space Mono', monospace", color: 'var(--text-muted)' }}>(2022–2023)</span>,
+                        <a href="https://comp.ophthalmology.uw.edu" target="_blank" rel="noopener noreferrer" className="text-link"> UW-Medicine Computational Ophthalmology Lab</a> <span style={{ fontSize: '0.85em', fontFamily: "'Space Mono', monospace", color: 'var(--text-muted)' }}>(2022–2023)</span>,
+                        and <a href="https://www.niaid.nih.gov/clinical-trials/lyme-disease-studies" target="_blank" rel="noopener noreferrer" className="text-link">NIH Lyme Disease Studies Unit</a> <span style={{ fontSize: '0.85em', fontFamily: "'Space Mono', monospace", color: 'var(--text-muted)' }}>(2020–2021)</span>.
+                    </p>
+                </section>
             </div>
         </div>
     );

@@ -1,50 +1,28 @@
 import { NavLink } from 'react-router-dom'
+import { useState } from 'react'
 
 function Nav() {
+    const [isMenuOpen, setIsMenuOpen] = useState(false)
+
     return (
-        <nav className="bg-white shadow-lg rounded-lg fixed top-8 left-1/2 transform -translate-x-1/2 w-max p-4">
-            <div className="container mx-auto flex justify-center items-center">
-                <ul className="flex space-x-8 list-none">
-                    <li>
-                        <NavLink
-                            exact
-                            to="/"
-                            activeClassName="active"
-                            className="nav-link"
-                        >
-                            Home
-                        </NavLink>
-                    </li>
-                    <li>
-                        <NavLink
-                            to="/about"
-                            activeClassName="active"
-                            className="nav-link"
-                        >
-                            About
-                        </NavLink>
-                    </li>
-                    <li>
-                        <NavLink
-                            to="/blog"
-                            activeClassName="active"
-                            className="nav-link"
-                        >
-                            Blog
-                        </NavLink>
-                    </li>
-                    <li>
-                        <NavLink
-                            to="/contact"
-                            activeClassName="active"
-                            className="nav-link"
-                        >
-                            Contact
-                        </NavLink>
-                    </li>
-                </ul>
+        <header style={{ marginBottom: '80px', display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start' }}>
+            <NavLink to="/" className="brand" style={{ fontFamily: "'Space Mono', monospace", fontWeight: 400, letterSpacing: '0px', color: 'var(--text-main)', textDecoration: 'none', textTransform: 'uppercase' }}>
+                Edward B. Zhang
+            </NavLink>
+
+            <div className="header-links" style={{ textAlign: 'right', fontFamily: "'Space Mono', monospace", fontSize: '12px', color: 'var(--text-muted)' }}>
+                <div style={{ marginBottom: '12px', color: '#aaa', opacity: 0.8, fontWeight: 600, letterSpacing: '1px', fontSize: '11px', fontFamily: "'Space Mono', monospace" }}>ELSEWHERE</div>
+                <NavLink to="/about" style={{ display: 'block', marginBottom: '4px', textDecoration: 'none', color: 'var(--text-muted)', transition: 'color 0.2s', fontFamily: "'Space Mono', monospace" }}>
+                    ABOUT
+                </NavLink>
+                <NavLink to="/blog" style={{ display: 'block', marginBottom: '4px', textDecoration: 'none', color: 'var(--text-muted)', transition: 'color 0.2s', fontFamily: "'Space Mono', monospace" }}>
+                    BLOG
+                </NavLink>
+                <NavLink to="/contact" style={{ display: 'block', marginBottom: '4px', textDecoration: 'none', color: 'var(--text-muted)', transition: 'color 0.2s', fontFamily: "'Space Mono', monospace" }}>
+                    CONTACT
+                </NavLink>
             </div>
-        </nav>
+        </header>
     )
 }
 
