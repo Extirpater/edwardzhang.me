@@ -60,6 +60,7 @@ body {
 a {
   color: inherit;
   text-decoration: none;
+  cursor: none;
 }
 
 a.text-link {
@@ -132,6 +133,7 @@ a.text-link:hover {
 button,
 a {
   transition: all 0.2s ease-in-out;
+  cursor: none;
 }
 
 /* Focus styles for accessibility */
